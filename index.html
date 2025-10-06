@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boshra Ariguib - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .about {
+            padding: 40px;
+            background: #f8f9fa;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.05em;
+            color: #555;
+            border-left: 4px solid #667eea;
+            margin: 0;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 0.9em;
+        }
+
+        .entry {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 2px solid #e0e0e0;
+            transition: border-color 0.3s;
+        }
+
+        .entry:hover {
+            border-left-color: #667eea;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            flex: 1;
+        }
+
+        .entry-date {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 0.9em;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        .entry-subtitle {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .entry-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        .entry-description ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+
+        .entry-description li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-category p {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .language-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .language-item:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .language-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .language-level {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .paper-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .paper-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.05em;
+        }
+
+        .paper-venue {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .paper-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .entry-header {
+                flex-direction: column;
+            }
+
+            .entry-date {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Boshra Ariguib</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> <a href="mailto:ariguiba@outlook.com">ariguiba@outlook.com</a></span>
+                <span><i class="fas fa-phone"></i> +49 176 80316303</span>
+                <span><i class="fab fa-github"></i> <a href="https://github.com/ariguiba" target="_blank">@ariguiba</a></span>
+                <span><i class="fas fa-cloud"></i> <a href="https://bsky.app/profile/ariguiba.bsky.social" target="_blank">@ariguiba.bsky.social</a></span>
+            </div>
+        </header>
+
+        <div class="about">
+            From the shores of Tunisia to the vibrant innovation hubs of Stuttgart, my journey as a Computer Science student is driven by a passion for exploring cutting-edge research, especially at the intersection of AI and the natural sciences. Curious and friendly by nature, I love learning new things and bring both dedication and good vibes to any team.
+        </div>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Master of Science in Computer Science</div>
+                        <div class="entry-date">Oct. 2022 – Present</div>
+                    </div>
+                    <div class="entry-subtitle">University of Stuttgart, Stuttgart, Germany</div>
+                    <div class="entry-description">
+                        <ul>
+                            <li>1st Specialization: Theoretical Computer Science and Scientific Computing</li>
+                            <li>2nd Specialization: Intelligent Systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Graduate Exchange Semester</div>
+                        <div class="entry-date">Feb. 2024 – Jun. 2024</div>
+                    </div>
+                    <div class="entry-subtitle">IMT Atlantique, Brest, France</div>
+                    <div class="entry-description">
+                        Exchange semester as part of M.Sc. in Computer Science. Machine Learning track, completed with grade very good (A).
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Bachelor of Science in Software Engineering</div>
+                        <div class="entry-date">Oct. 2018 – Apr. 2022</div>
+                    </div>
+                    <div class="entry-subtitle">University of Stuttgart, Stuttgart, Germany</div>
+                    <div class="entry-description">
+                        Graduated with the grade very good (1.6). Thesis: Second-order projection-based mapping methods for coupled multi-physics simulations.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+                
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Teaching Assistant</div>
+                        <div class="entry-date">Oct. 2019 – Present (discontinuous)</div>
+                    </div>
+                    <div class="entry-subtitle">Institute for Formal Methods of Computer Science, University of Stuttgart</div>
+                    <div class="entry-description">
+                        Supervised multiple tutorial groups for Theoretical Computer Science I, II, and III. Responsibilities included grading assignments and explaining exercise tasks. Covered topics include Logic and Discrete Structures, Formal Languages and Automata Theory, Computability and Complexity, and Algorithmics.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Research Assistant</div>
+                        <div class="entry-date">Apr. 2024 – Dec. 2024</div>
+                    </div>
+                    <div class="entry-subtitle">Cognitive Computational Science Department, Institute for Visualization and Interactive Systems, University of Stuttgart</div>
+                    <div class="entry-description">
+                        Supervised a cognitive neuroscience experiment involving EEG and eye-tracking setup. Configured participant-facing screens using OpenSesame software, set up EEG and Eye-tracking hardware, guided participants, collected data, and performed data analysis. Contributed to the open-source MNE-BIDS Python library by implementing a new EEG filtering method via Pull Request.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Working Student in Data Science</div>
+                        <div class="entry-date">Apr. 2023 – Dec. 2023</div>
+                    </div>
+                    <div class="entry-subtitle">ChargeHere GmbH</div>
+                    <div class="entry-description">
+                        Part of the Product Development and Management team at ChargeHere, a company focused on expanding EV charging infrastructure. Researched and implemented data science models to analyze the internal monitoring system using InfluxDB Framework. Processed sensor data from charging stations to generate business insights, developed a reporting system, and explored future business models including Smart Charging and Load Optimization.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Working Student in Software Development</div>
+                        <div class="entry-date">Jul. 2022 – Jan. 2023</div>
+                    </div>
+                    <div class="entry-subtitle">Itestra GmbH</div>
+                    <div class="entry-description">
+                        Part of the development team for B2B banking software written in Java. Developed UI components, adapted the data model using SQL, replaced outdated components with modern libraries, and automated configuration file generation with Bash scripts.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-file-alt"></i> Conference Papers & Talks</h2>
+                
+                <div class="paper-item">
+                    <div class="paper-title">A live context model for semantic reasoning in IoT applications</div>
+                    <div class="paper-venue">IEEE PerCom 2022 - CoMoReA Workshop</div>
+                    <div class="paper-description">
+                        As part of a research project in distributed computing systems, submitted and presented a paper at the international IEEE Conference PerCom 2022.
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-title">Computational Storytelling with Pluto.jl Notebooks</div>
+                    <div class="paper-venue">JuliaCon 2025 (Upcoming) - Lightning Talk</div>
+                    <div class="paper-description">
+                        Accepted to present a lightning talk at JuliaCon 2025 in Paris, showcasing work on Computational Storytelling using Pluto.jl notebooks for interactive scientific communication.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fab fa-github"></i> Open Source Contributions</h2>
+                
+                <div class="entry">
+                    <div class="entry-title">preCICE - Coupling Library for Partitioned Multi-Physics Simulations</div>
+                    <div class="entry-description">
+                        During bachelor thesis, developed a new projection-based method for mapping data between coupled simulations and contributed to the open-source preCICE library.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-title">Pluto.jl - Featured Notebooks</div>
+                    <div class="entry-description">
+                        Regular contributor to the open-source Pluto.jl project, a notebook implementation for Julia. Participated in creating Featured Notebooks that showcase the tool's most prominent features while explaining mathematical and computational concepts.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-hands-helping"></i> Volunteer Work</h2>
+                
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Volunteer Project in Florianopolis, Brazil</div>
+                        <div class="entry-date">Feb. 2023 – Apr. 2023</div>
+                    </div>
+                    <div class="entry-subtitle">German Committee of AIESEC e.V.</div>
+                    <div class="entry-description">
+                        Teaching children from marginalized communities musical theory and instruments in Florianopolis, southern Brazil.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Vice President Customer Experience Team</div>
+                        <div class="entry-date">Jun. 2019 – Apr. 2020</div>
+                    </div>
+                    <div class="entry-subtitle">German Committee of AIESEC e.V.</div>
+                    <div class="entry-description">
+                        As team leader, responsible for operational development of social volunteer projects. Shared responsibility for overall development of AIESEC local committee in Stuttgart and Hohenheim. Led and strategically guided the local committee, coordinated a team of up to 7 people, and developed marketing strategies.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Customer Experience Manager</div>
+                        <div class="entry-date">Feb. 2019 – Jun. 2019</div>
+                    </div>
+                    <div class="entry-subtitle">German Committee of AIESEC e.V.</div>
+                    <div class="entry-description">
+                        Responsible for support and guidance of students going abroad for volunteer projects, and planning and implementation of marketing activities in Stuttgart and surrounding areas.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-language"></i> Languages</h2>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">Arabic (Tunisian)</div>
+                        <div class="language-level">Mother tongue</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">French</div>
+                        <div class="language-level">Mother tongue</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Proficient User</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">German</div>
+                        <div class="language-level">Proficient User</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Portuguese</div>
+                        <div class="language-level">Beginner User</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-code"></i> Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Advanced</h3>
+                        <p>Python (NumPy, Matplotlib, Seaborn, Pandas, Scikit-learn), PyTorch & PyTorch Geometric, Java, Julia</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Intermediate</h3>
+                        <p>R, C++, JavaScript, HTML & CSS, TensorFlow, SQL, Bash</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Misc</h3>
+                        <p>LaTeX, XML, Git, Jupyter, Pluto.jl, OpenSesame, EEGLab, InfluxDB</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-star"></i> Additional Information</h2>
+                <div class="entry">
+                    <div class="entry-title">Experience Beyond Tech</div>
+                    <div class="entry-description">Fair Hostess, Marketing Promoter</div>
+                </div>
+                <div class="entry">
+                    <div class="entry-title">Hobbies</div>
+                    <div class="entry-description">Running, Swimming, Skiing, Cooking, Traveling, Language Learning, Playing Piano</div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 Boshra Ariguib. Built with dedication and good vibes.</p>
+        </footer>
+    </div>
+</body>
+</html>
