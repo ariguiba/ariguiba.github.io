@@ -1,0 +1,7 @@
+# Mac system files
+.DS_Store
+
+# Private / source files that should not be published
+assets/*.HEIC
+assets/CV_*.pdf
+index_old.html
