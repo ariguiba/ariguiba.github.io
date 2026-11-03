@@ -65,3 +65,16 @@
   window.addEventListener('resize', update);
   update();
 })();
+
+// ---------- Publications: "Abs" opens and closes the abstract ----------
+(function () {
+  document.querySelectorAll('.abs-toggle').forEach(function (button) {
+    var abstract = button.closest('.pub-body').querySelector('.abstract');
+    if (!abstract) { button.hidden = true; return; }
+    button.addEventListener('click', function () {
+      var open = abstract.hidden;
+      abstract.hidden = !open;
+      button.setAttribute('aria-expanded', String(open));
+    });
+  });
+})();

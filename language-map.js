@@ -30,7 +30,10 @@ var LANGUAGE_MAP = {
     { name: 'Italian',    level: 'Can get by',                     codes: ['ita'],               home: [],      dialects: false },
     { name: 'Dutch',      level: 'Can get by',                     codes: ['nld'],               home: [],      dialects: false },
     // Languages I want to learn: goal: true keeps them out of modes 1-3, they only appear in mode 4
-    { name: 'Russian',    level: 'Goal',                           codes: ['rus'],               home: [],      goal: true }
+    { name: 'Turkish',    level: 'Goal',                           codes: ['tur'],               home: [],      goal: true },
+    { name: 'Greek',      level: 'Goal',                           codes: ['ell'],               home: [],      goal: true },
+    // Persian: fas = Iran, prs = Dari (Afghanistan), tgk = Tajik (Tajikistan)
+    { name: 'Persian',    level: 'Goal',                           codes: ['fas', 'prs', 'tgk'], home: [],      goal: true }
   ],
 
   // Countries where a main language is official but NOT what most people

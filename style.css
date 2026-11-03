@@ -209,16 +209,68 @@ p { margin: 0 0 1rem; }
 .note { font-family: var(--sans); font-size: 0.875rem; color: var(--muted); }
 
 .pubs { list-style: none; padding: 0; margin: 0; }
-.pubs li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+/* Top-level entries only (the tag chips are list items too) */
+.pubs > li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1rem;
   padding: 0.85rem 0 0.85rem 1rem;
   border-left: 2px solid var(--rule);
   margin-bottom: 0.75rem;
   transition: border-color 150ms ease;
 }
-.pubs li:hover { border-left-color: var(--accent); }
+.pub-body { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+
+/* Short venue label on the left */
+.pub-venue-tag {
+  align-self: start;
+  margin-top: 0.2rem;
+  padding: 0.2rem 0.3rem;
+  font: 500 0.75rem var(--sans);
+  text-align: center;
+  color: var(--accent);
+  border: 1px solid var(--accent-line);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Topic tags */
+.pub-tags { list-style: none; padding: 0; margin: 0.3rem 0 0; display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.pub-tags li {
+  font: 400 0.75rem var(--sans);
+  color: var(--ink-2);
+  background: var(--rule);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+
+/* "Abs" toggle and abstract */
+.abs-toggle {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-line);
+  text-underline-offset: 0.18em;
+}
+.abs-toggle:hover, .abs-toggle[aria-expanded="true"] { color: var(--accent); }
+.abstract {
+  margin: 0.5rem 0 0;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  border-left: 2px solid var(--accent-line);
+}
+
+@media (max-width: 520px) {
+  .pubs > li { grid-template-columns: 1fr; gap: 0.35rem; }
+  .pub-venue-tag { justify-self: start; }
+}
+.pubs > li:hover { border-left-color: var(--accent); }
 
 .pub-title { font-weight: 600; text-decoration: none; line-height: 1.35; }
 .authors { color: var(--ink-2); font-size: 1rem; }
